@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<MenuX>
+	<Pizza>
+		<codigo>VEP</codigo>
+		<name>Veggie-Pizza</name>
+		<ingredients>
+			<ingredient type= "Base">
+				<name>Thin</name>
+				<unit>grams</unit>
+				<calories>131</calories>
+			</ingredient>
+			<ingredient type= "Topping">
+				<name>spinach</name>
+				<category>Vegetal</category>
+				<unit>grams</unit>
+				<calories>23</calories>
+			</ingredient>
+			<ingredient type= "Topping">
+				<name>cheese</name>
+				<category>Dairy</category>
+				<unit>grams</unit>
+				<calories>300</calories>
+			</ingredient>
+			<ingredient type= "Topping">
+				<name>Tomato sauce</name>
+				<category>Sauce</category>
+				<unit>grams</unit>
+				<calories>18</calories>
+			</ingredient>
+		</ingredients>
+		<price>
+			<small>6 euro</small>
+			<medium>8€</medium>
+			<big>12€</big>
+		</price>
+	</Pizza>
+	<Pizza>
+		<codigo>VEP1</codigo>
+		<name>Veggie-Pizza</name>
+		<ingredients>
+			<ingredient type= "Base">
+				<name>Thin</name>
+				<unit>grams</unit>
+				<calories>131</calories>
+			</ingredient>
+			<ingredient type= "Topping">
+				<name>spinach</name>
+				<category>Vegetal</category>
+				<unit>grams</unit>
+				<calories>23</calories>
+			</ingredient>
+			<ingredient type= "Topping">
+				<name>cheese</name>
+				<category>Dairy</category>
+				<unit>grams</unit>
+				<calories>300</calories>
+			</ingredient>
+			<ingredient type= "Topping">
+				<name>Tomato sauce</name>
+				<category>Sauce</category>
+				<unit>grams</unit>
+				<calories>18</calories>
+			</ingredient>
+		</ingredients>
+		<price>
+			<small>6</small>
+			<medium>8€</medium>
+			<big>12€</big>
+		</price>
+	</Pizza>
+</MenuX>
+

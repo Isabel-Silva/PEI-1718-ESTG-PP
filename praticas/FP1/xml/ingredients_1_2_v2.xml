@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ingredients>
+    <ingredient type="Topping">
+        <name>Tomato</name>
+        <category>Vegetal</category>
+        <calories unit="grams">18</calories>
+    </ingredient>
+    <ingredient type="Topping">
+        <name>Spinach</name>
+        <category>Vegetal</category>
+        <calories unit="grams">23</calories>
+    </ingredient>
+    <ingredient type="base">
+        <name>Cheese</name>
+        <category>Dairy</category>
+        <calories units="grams">300</calories>
+    </ingredient>
+    <ingredient type="base">
+        <name>Tomato Sauce</name>
+        <category>Sauce</category>
+        <calories unit="milliliters">18</calories>
+    </ingredient>
+    <ingredient type="base">
+        <name>Oregano</name>
+        <category>Herb</category>
+        <calories unit="grams">265</calories>
+    </ingredient>
+    <ingredient type="Topping">
+        <name>Chicken</name>
+        <category>Meat</category>
+        <calories unit="grams">239</calories>
+    </ingredient>
+    <ingredient type="Topping">
+        <name>Onion Sauce</name>
+        <category>Sauce</category>
+        <calories unit="milliliters">92</calories>
+    </ingredient>
+    <ingredient type="Topping">
+        <name>Pasta</name>
+        <category>Pasta</category>
+        <calories unit="grams">131</calories>
+    </ingredient>
+</ingredients>

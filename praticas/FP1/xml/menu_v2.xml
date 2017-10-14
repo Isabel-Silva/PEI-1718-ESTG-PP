@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<menu header="A tasca da ESTG">
+	
+	<pizza cod="VEP">
+		<name>Veggie-Pizza</name>
+		<base>tiny</base>
+
+		<topping>
+			<product>spinach</product>
+			<product>cheese</product>
+			<product>tomato sauce</product>
+		</topping>
+
+		<price unit="Euro">
+			<small>6</small>
+			<medium>8</medium>
+			<big>12</big>
+		</price>
+
+		<price unit="dollard">
+			<small>16</small>
+			<medium>8</medium>
+			<big>12</big>
+		</price>
+
+	</pizza>
+
+	<pizza cod="MZP">
+		...
+	</pizza>
+	
+</menu>
