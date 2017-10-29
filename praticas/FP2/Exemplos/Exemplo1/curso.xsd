@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema">
+    
+    <xs:simpleType name="escolas">
+        <xs:restriction base="xs:string">
+            <xs:enumeration value="ESTG"/>
+            <xs:enumeration value="ESIEG"/>
+            <xs:enumeration value="ISEP"/>
+            <xs:enumeration value="ISCAP"/>
+            <xs:enumeration value="ESMAD"/>
+            <xs:enumeration value="ESE"/>
+            <xs:enumeration value="ESMAE"/>
+            <xs:enumeration value="ESS"/>
+            <xs:enumeration value="ESHT"/>
+        </xs:restriction>
+    </xs:simpleType>
+
+    <xs:element name="curso">
+        <xs:complexType>
+            <xs:sequence>
+                <xs:element name="nome" type="xs:string"/>
+                <xs:element name="coordenador" type="xs:string"/>
+                <xs:element name="unidades">
+                    <xs:complexType>
+                        <xs:sequence minOccurs="1" maxOccurs="unbounded">
+                            <xs:element name="unidade" type="xs:string"/>
+                        </xs:sequence>
+                    </xs:complexType>
+                </xs:element>
+            </xs:sequence>
+            <xs:attribute name="ano" type="xs:gYear" use="required"/>
+            <xs:attribute name="escola" type="escolas" use="required"/>
+        </xs:complexType>
+    </xs:element>
+           
+</xs:schema>
