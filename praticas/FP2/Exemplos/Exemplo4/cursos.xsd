@@ -6,8 +6,8 @@
 
     <xs:element name="cursos">
         <xs:complexType>            
-            <xs:sequence maxOccurs="unbounded">
-                <xs:element name="curso" type="ipp:curso"/>              
+            <xs:sequence>
+                <xs:element name="curso" type="ipp:curso" maxOccurs="unbounded"/>              
             </xs:sequence>
         </xs:complexType>
     </xs:element>  

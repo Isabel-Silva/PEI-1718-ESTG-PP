@@ -34,8 +34,8 @@
             <xs:element name="regente" type="xs:string"/>
             <xs:element name="docentes">
                 <xs:complexType>
-                    <xs:sequence maxOccurs="unbounded">
-                        <xs:element name="nome" type="docentes"/>
+                    <xs:sequence>
+                        <xs:element name="nome" type="docentes" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
@@ -50,8 +50,8 @@
             <xs:element name="coordenador" type="xs:string"/>
             <xs:element name="unidades">
                 <xs:complexType>
-                    <xs:sequence minOccurs="1" maxOccurs="unbounded">
-                        <xs:element name="unidade" type="unidades"/>
+                    <xs:sequence>
+                        <xs:element name="unidade" type="unidades" minOccurs="1" maxOccurs="unbounded"/>
                     </xs:sequence>
                 </xs:complexType>
             </xs:element>
