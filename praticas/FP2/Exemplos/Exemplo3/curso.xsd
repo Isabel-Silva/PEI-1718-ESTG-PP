@@ -7,8 +7,8 @@
     <xs:import schemaLocation="common.xsd" namespace="http://www.ipp.pt/common"/>
 
     <xs:complexType name="unidades">
-        <xs:sequence minOccurs="1" maxOccurs="unbounded">
-            <xs:element name="unidade" type="xs:string"/>
+        <xs:sequence>
+            <xs:element name="unidade" type="xs:string" minOccurs="1" maxOccurs="unbounded"/>
         </xs:sequence>
     </xs:complexType>
     
