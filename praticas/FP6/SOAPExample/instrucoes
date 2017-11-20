@@ -1,0 +1,5 @@
+java EE base
+criar library: javaee-endorsed-api-7.0
+tools -> server -> add servers -> glassfish
+separador servers -> glassfish -> start server
+Botão direito do rato sobre o projeto -> deploy e posteriormente Run
