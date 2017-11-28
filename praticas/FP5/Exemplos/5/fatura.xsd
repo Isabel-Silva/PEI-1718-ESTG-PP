@@ -1,0 +1,56 @@
+﻿<!-- Created with Liquid Studio 2017 - Community Edition 15.1.14.7734 (https://www.liquid-technologies.com) -->
+<xs:schema elementFormDefault="qualified" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+
+<xs:complexType name="morada">
+    <xs:sequence>
+        <xs:element type="xs:string" name="rua"/>
+        <xs:element type="xs:string" name="codPostal"/>
+        <xs:element type="xs:string" name="localidade"/>
+        <xs:element type="xs:string" name="pais"/>
+    </xs:sequence>
+</xs:complexType>
+    
+<xs:complexType name="clientes">
+    <xs:sequence>
+        <xs:element type="xs:string" name="nome"/>
+        <xs:element name="morada" type="morada" />
+    </xs:sequence>
+    <xs:attribute type="xs:int" name="nif"/>
+</xs:complexType>
+
+<xs:complexType name="preco">
+    <xs:simpleContent>
+        <xs:extension base="xs:float">
+            <xs:attribute type="xs:byte" name="iva" use="required" />
+        </xs:extension>
+    </xs:simpleContent>
+</xs:complexType>
+    
+<xs:complexType name="linha">
+    <xs:sequence>
+        <xs:element type="xs:string" name="producto"/>
+        <xs:element type="xs:short" name="quantidade"/>
+        <xs:element name="preco" type="preco"/>
+    </xs:sequence>
+    <xs:attribute type="xs:byte" name="numero" use="optional"/>
+</xs:complexType>
+    
+<xs:complexType name="linhas">
+    <xs:sequence>
+        <xs:element name="linha" maxOccurs="unbounded" minOccurs="0" type="linha" />
+    </xs:sequence>
+</xs:complexType>
+    
+<xs:element name="fatura">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="cliente" type="clientes" />            
+            <xs:element name="linhas" type="linhas" />
+        </xs:sequence>
+        <xs:attribute type="xs:int" name="numero"/>
+        <xs:attribute type="xs:int" name="serie"/>
+        <xs:attribute type="xs:date" name="data"/>
+    </xs:complexType>
+</xs:element>
+    
+</xs:schema>

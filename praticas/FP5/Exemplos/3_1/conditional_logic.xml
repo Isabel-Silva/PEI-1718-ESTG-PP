@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/xsl" href="conditional_logic.xslt"?>
+<cursos escola="ESTG">
+	<curso disponivel="nao">
+		<nome>CET</nome>
+		<tipo>Laboral</tipo>
+		<img>../photos/C1.jpg</img>
+	</curso>
+	<curso disponivel="sim">
+		<nome>LICENCIATURAS</nome>
+		<tipo>Laboral</tipo>
+		<img>../photos/C2.jpg</img>
+	</curso>
+	<curso disponivel="nao">
+		<nome>MESTRADOS</nome>
+		<tipo>Pós-Laboral</tipo>
+		<img>../photos/C3.jpg</img>
+	</curso>
+	<curso disponivel="sim">
+		<nome>PÓS-GRADUAÇÕES</nome>
+		<tipo>Pós-Laboral</tipo>
+		<img>../photos/C4.jpg</img>
+	</curso>
+</cursos>

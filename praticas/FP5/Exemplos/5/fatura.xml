@@ -1,0 +1,39 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet type="text/xsl" href="fatura.xsl"?>
+
+<fatura 
+	numero="145" 
+	serie="2" 
+	data="2017-11-14" 
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="fatura.xsd">
+    
+    <cliente nif="111222333">
+        <nome>António Teixeira</nome>
+		<morada>
+            <rua>Rua do curral</rua> 
+            <codPostal>4610-000</codPostal>
+			<localidade>Felgueiras</localidade>
+			<pais>Portugal</pais>            
+        </morada>
+    </cliente>
+	
+	<linhas>
+		<linha numero="2">
+			<producto>Canetas</producto>
+			<quantidade>20</quantidade>
+			<preco iva="23">2.5</preco>
+		</linha>
+		<linha numero="1">
+			<producto>Marcadores</producto>
+			<quantidade>10</quantidade>
+			<preco iva="23">10</preco>
+		</linha>
+		<linha numero="3">
+			<producto>Lápis</producto>
+			<quantidade>250</quantidade>
+            <preco iva="23">1</preco>
+		</linha>		
+	</linhas>
+	
+</fatura>
