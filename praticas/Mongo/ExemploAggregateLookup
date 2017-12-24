@@ -1,0 +1,101 @@
+- Utilização do lookup para a junção de documentos de coleções diferentes
+ Considerando a existência de duas coleções: restaurants e grades (exemplo descrito nos slides)
+ 
+ Exemplo da coleção restaurants:
+ {
+        "_id" : ObjectId("5a01aee1a80ac9c7c7443b16"),
+        "address" : {
+                "building" : "759",
+                "coord" : [
+                        -73.9925306,
+                        40.7309346
+                ],
+                "street" : "Broadway",
+                "zipcode" : "10003"
+        },
+        "borough" : "Manhattan",
+        "cuisine" : "Delicatessen",
+        "name" : "Bully'S Deli",
+        "restaurant_id" : "40361708"
+}
+(...)
+Exemplo da coleção grades:
+{
+        "_id" : ObjectId("5a01aee1a80ac9c7c7443cef"),
+        "grades" : [
+                {
+                        "date" : ISODate("2014-12-11T00:00:00Z"),
+                        "grade" : "A",
+                        "score" : 7
+                },
+                {
+                        "date" : ISODate("2014-07-24T00:00:00Z"),
+                        "grade" : "A",
+                        "score" : 9
+                }
+                (...)
+        ]
+}
+
+Exemplo de output:
+{
+        "_id" : ObjectId("5a01aee1a80ac9c7c7443b12"),
+        "address" : {
+                "building" : "1007",
+                "coord" : [
+                        -73.856077,
+                        40.848447
+                ],
+                "street" : "Morris Park Ave",
+                "zipcode" : "10462"
+        },
+        "borough" : "Bronx",
+        "cuisine" : "Bakery",
+        "name" : "Morris Park Bake Shop",
+        "restaurant_id" : "30075445",
+        "joinedDocument" : [
+                {
+                        "_id" : ObjectId("5a01aee1a80ac9c7c7443b12"),
+                        "grades" : [
+                                {
+                                        "date" : ISODate("2014-03-03T00:00:00Z"),
+                                        "grade" : "A",
+                                        "score" : 2
+                                },
+                                {
+                                        "date" : ISODate("2013-09-11T00:00:00Z"),
+                                        "grade" : "A",
+                                        "score" : 6
+                                },
+                                {
+                                        "date" : ISODate("2013-01-24T00:00:00Z"),
+                                        "grade" : "A",
+                                        "score" : 10
+                                },
+                                {
+                                        "date" : ISODate("2011-11-23T00:00:00Z"),
+                                        "grade" : "A",
+                                        "score" : 9
+                                },
+                                {
+                                        "date" : ISODate("2011-03-10T00:00:00Z"),
+                                        "grade" : "B",
+                                        "score" : 14
+                                }
+                        ]
+                }
+        ]
+}
+
+Solução:
+ db.restaurants.aggregate([{
+ $lookup:
+     {
+       from: "grades",
+       localField: "_id",
+       foreignField: "_id",
+       as: "joinedDocument"
+     }
+}])
+
+Mais informação: https://docs.mongodb.com/manual/reference/operator/aggregation/lookup/#pipe._S_lookup
