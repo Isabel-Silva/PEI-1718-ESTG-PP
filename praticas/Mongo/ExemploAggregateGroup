@@ -1,0 +1,14 @@
+No exemplo: ExemploAggregateUnwind os dados de cada restaurante são "replicados" para cada grade. 
+Este exemplo é responsável por ordenar as avaliações (grades), agrupar os restaurantes pelo seu _id e "construir" novamente o array de grades:
+db.restaurants.aggregate([
+	{$unwind:"$grades"},
+	{$match:{cuisine:"Bakery"}}, 
+	{$sort:{"grades.score":1}},
+	{$group:{_id:"$_id",grades:{$push:"$grades"}}}
+]).pretty()
+
+Mais informação:
+https://docs.mongodb.com/manual/reference/operator/aggregation/unwind/
+https://docs.mongodb.com/manual/reference/operator/aggregation/match/
+https://docs.mongodb.com/manual/reference/operator/aggregation/sort/
+https://docs.mongodb.com/manual/reference/operator/aggregation/group/
