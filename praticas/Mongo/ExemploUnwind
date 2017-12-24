@@ -1,0 +1,94 @@
+O operador $unwind retira os elementos de um campo do tipo array e gera o conteúdo do documento para cada elemento do array.
+Mais informação: https://docs.mongodb.com/manual/reference/operator/aggregation/unwind/
+Exemplo de documento:
+{
+        "_id" : ObjectId("5a01aee1a80ac9c7c7443b16"),
+        "address" : {
+                "building" : "759",
+                "coord" : [
+                        -73.9925306,
+                        40.7309346
+                ],
+                "street" : "Broadway",
+                "zipcode" : "10003"
+        },
+        "borough" : "Manhattan",
+        "cuisine" : "Delicatessen",
+        "grades" : [
+                {
+                        "date" : ISODate("2014-01-21T00:00:00Z"),
+                        "grade" : "A",
+                        "score" : 12
+                },
+                {
+                        "date" : ISODate("2013-01-04T00:00:00Z"),
+                        "grade" : "A",
+                        "score" : 11
+                },
+                {
+                        "date" : ISODate("2012-06-07T00:00:00Z"),
+                        "grade" : "A",
+                        "score" : 6
+                },
+                {
+                        "date" : ISODate("2012-01-17T00:00:00Z"),
+                        "grade" : "A",
+                        "score" : 8
+                }
+        ],
+        "name" : "Bully'S Deli",
+        "restaurant_id" : "40361708"
+}
+
+Exemplo de utilização de $unwind:
+{
+        "_id" : ObjectId("5a01aee1a80ac9c7c7443b06"),
+        "address" : {
+                "building" : "2780",
+                "coord" : [
+                        -73.98241999999999,
+                        40.579505
+                ],
+                "street" : "Stillwell Avenue",
+                "zipcode" : "11224"
+        },
+        "borough" : "Brooklyn",
+        "cuisine" : "American",
+        "grades" : {
+                "date" : ISODate("2014-06-10T00:00:00Z"),
+                "grade" : "A",
+                "score" : 5
+        },
+        "name" : "Riviera Caterer",
+        "restaurant_id" : "40356018"
+}
+{
+        "_id" : ObjectId("5a01aee1a80ac9c7c7443b06"),
+        "address" : {
+                "building" : "2780",
+                "coord" : [
+                        -73.98241999999999,
+                        40.579505
+                ],
+                "street" : "Stillwell Avenue",
+                "zipcode" : "11224"
+        },
+        "borough" : "Brooklyn",
+        "cuisine" : "American",
+        "grades" : {
+                "date" : ISODate("2013-06-05T00:00:00Z"),
+                "grade" : "A",
+                "score" : 7
+        },
+        "name" : "Riviera Caterer",
+        "restaurant_id" : "40356018"
+}
+(...)
+
+Solução:
+db.restaurants.aggregate([
+ {
+ 	$unwind:"$grades"
+ }
+])
+
