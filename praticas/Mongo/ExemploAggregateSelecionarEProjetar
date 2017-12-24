@@ -1,0 +1,10 @@
+Filtrar documentos e projetar elementos utilizando o método aggregate com os Pipeline Stages: $match e $project, respetivamente:
+db.restaurants.aggregate(
+  [
+    {
+ 	    $match:{borough:"Bronx"}
+    },
+    {
+ 	    $project:{name:1}
+    }
+ ])
