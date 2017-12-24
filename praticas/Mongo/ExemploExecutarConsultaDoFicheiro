@@ -1,0 +1,17 @@
+Este exemplo tem como objetivo mostrar como podem armazenar as consultar em ficheiros e executar essas consultas.
+Criar um ficheiro com extensão: .js;
+Criar uma função responsável por imprimir os resultados retornados num cursor pelo find/aggregate;
+Criar a consulta;
+
+O seguinte exemplo deverá ser colocado num ficheiro com extensão .js de forma a imprimir todos os restaurantes:
+function mostra_resultados (result) {
+    print(tojson(result));
+}
+
+db.restaurants.find().forEach(mostra_resultados)
+
+De seguida, é necessário executar o código armazenado no ficheiro. Para isso, no terminal
+do windows (ou seja, não na shell do Mongo e posicionado na pasta bin - no caso de não possuir os programas nas variáveis de ambiente) escrever:
+mongo restaurantsDB ExemploConsultaFicheiro.js
+(assumindo que o código apresentado anteriormente foi colocado num ficheiro ExemploConsultaFicheiro.js que se encontra na pasta bin do Mongo)
+(restaurantsDB é o nome da base de dados)
